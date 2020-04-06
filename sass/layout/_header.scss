@@ -1,0 +1,17 @@
+.header {
+    background: $colour-primary;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;   
+    &__logo {
+        width: auto;
+        height: 9rem;
+        margin: auto;
+        @media (max-width:922px) {
+            width: 50%;
+            height: auto;
+        }
+    }
+}
