@@ -1,5 +1,13 @@
+@font-face {
+    font-family: 'montserrat_medium';
+    src: url('../fonts/montserrat_medium/Montserrat-Medium.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'montserrat_medium', sans-serif;
     color: $colour-primary;
     font-size: 2rem;
     font-weight: 100;

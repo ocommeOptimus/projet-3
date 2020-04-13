@@ -1,20 +1,22 @@
 .header {
     background: $colour-primary;
-    height: 10rem;
+    height: 245px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    width: 100%;   
+    width: 100%;
+    margin-bottom: 50px;
+    border-bottom: 2px solid lighten($colour-primary, 15);
+    a {
+        text-align: center;
+        margin: auto;
+    }   
     &__logo {
         width: auto;
-        height: 9rem;
-        margin: auto;
+        height: 100px;
         @media (max-width:922px) {
             width: 50%;
             height: auto;
         }
-    }
-    a {
-        margin: auto;
     }
 }

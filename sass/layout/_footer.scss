@@ -2,19 +2,31 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    color: $colour-txt;
     background: $colour-primary;
-    height: 7rem;
-    width: 100%;   
+    border-top: 2px solid lighten($colour-primary, 15);
+    height: 140px;
+    width: 100%;
     &__info {
         width: auto;
         height: 100%;
         ul {
             width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 15px;
+            padding: 35px 30px;
+        }
+        &--link{
+            display: inline;
+            color: $colour-txt;
+            font-size: map-get($font-size, large);
+            & a{
+                text-decoration: none;
+                color: $colour-txt;
+            }
+            & a:hover{
+                color: $colour-white;
+            }
         }
     }
 }
