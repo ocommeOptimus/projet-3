@@ -4,16 +4,19 @@
     flex-wrap: wrap;
     width: 100%;
     &__card {
-        $self: &;
         max-width: 535px;
         margin: 50px;
+        background: rgba(0, 0,2);
         box-shadow: 1px 1px 22px lighten(grey, 35);
-        @media (max-width:922px){
-            max-width: 100%;
+        &:hover + .menu-bloc__card--prev {
+            cursor: pointer;
+            transform: scale(1.15);
         }
         &--prev{
             width: 100%;
             height: 100%;
+            transform: scale(1);
+            transition: transform 400ms;
         }
     }
     &__soon {
@@ -33,10 +36,17 @@
             transform: scale(1.15);
         }
         @media (max-width:922px) {
-            max-width: 100%;
+            max-width: 70%;
+            font-size: map-get($font-size, medium);
         }
     }
-    &:hover {
-        cursor: pointer;
+}
+.menu-bloc__card {
+    &--prev {
+        transform: scale(1);
+        transition: transform 400ms;
+    }
+    &:hover + .menu-bloc__card--prev {
+        transform: scale(1.15);
     }
 }

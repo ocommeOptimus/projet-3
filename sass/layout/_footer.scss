@@ -15,11 +15,18 @@
             justify-content: space-between;
             flex-wrap: wrap;
             padding: 35px 30px;
+            @media (max-width:922px) {
+                flex-direction: column;
+                align-items: center;
+            }
         }
         &--link{
             display: inline;
             color: $colour-txt;
             font-size: map-get($font-size, large);
+            @media (max-width:922px){
+                font-size: map-get($font-size, medium);
+            }
             & a{
                 text-decoration: none;
                 color: $colour-txt;
