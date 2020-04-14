@@ -30,6 +30,7 @@
             & a{
                 text-decoration: none;
                 color: $colour-txt;
+                transition: all 250ms;
             }
             & a:hover{
                 color: $colour-white;
