@@ -4,16 +4,21 @@
     flex-wrap: wrap;
     width: 100%;
     &__card {
+        overflow: hidden;
         width: 535px;
         height: 765px;
         margin: 50px;
         background: rgba(0, 0,2);
         box-shadow: 1px 1px 22px lighten(grey, 35);
-        transition: text-shadow 900ms ease, box-shadow 950ms ease;
+        transition: box-shadow 800ms ease-in-out;
         @include card-prev($card);
         &:hover {
             cursor: pointer;
-            box-shadow: 1px 1px 22px lighten(grey, 10);
+            box-shadow: 1px 1px 22px lighten(grey, 5);
+        }
+        @media (max-width: 922px) {
+            width: 280px;
+            height: 400px;
         }
     }
     &__soon {
@@ -33,6 +38,30 @@
         @media (max-width:922px) {
             max-width: 70%;
             font-size: map-get($font-size, medium);
+        }
+    }
+}
+
+.menu__card{
+    &--one,
+    &--two,
+    &--three,
+    &--four {
+        transition: all 1100ms ease-out;
+        &:hover {
+            transform: perspective(750px) translateZ(40px);
+        }
+        @media (max-width:922px) {
+            font-size: larger;
+            h2 {
+                font-size: larger;
+            }
+            i {
+                text-align: center;
+            }
+            img {
+                width: 50%;
+            }
         }
     }
 }

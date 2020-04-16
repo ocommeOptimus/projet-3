@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass:watch": "sass --watch ./sass/main.scss:./css/style.css --style compressed",
-    "prefix":"postcss ./css/style.css --use autoprefixer -d ./css/"
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/gerkx/maintainable-css-with-sass/issues"
   },
-  "homepage": "https://github.com/gerkx/maintainable-css-with-sass#readme"
+  "homepage": "https://github.com/gerkx/maintainable-css-with-sass#readme",
+  "dependencies": {
+    "sass": "^1.26.3"
+  }
 }
