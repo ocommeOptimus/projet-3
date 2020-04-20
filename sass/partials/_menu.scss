@@ -1,18 +1,150 @@
-.menu__details {
-    max-width: 1185px;
-    margin: 50px;
-    &--title {
+.menu {
+    @include flex ;
+    &__title {
+        width: 100%;
         text-align: center;
-        color: $colour-title-one;
+        color: black;
         font-family: 'arial', serif;
         font-weight: bold;
         font-size: 58px;
         font-style: normal;
-        margin-bottom: 50px;
+        margin-bottom: 45px;
+        @media (max-width: 922px) {
+            font-size: 38px;
+        }
     }
-    &--prev{
-        box-shadow: 1px 1px 22px lighten(grey, 35);
-        width: 100%;
-        height: auto;
+    &__details{
+        @include card-prev($card_back);
+        &--food {
+            @include flex-space ;
+            margin-top: 90px;
+            padding: 0 125px;
+            @media (max-width: 922px) {
+                padding: 0 45px;
+            }
+            h3 {
+                position: relative;
+                &::after {
+                    content: '';
+                    transform-origin: left; 
+                    transform: scaleX(0);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: .1em; 
+                    background: $colour-txt;
+                    transition: transform .6s;
+                }
+                &:hover{
+                    &::after {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+            &--title {
+                @include flex-space;
+                flex-wrap: nowrap;
+                font-size: map-get($font-size, large);
+                font-weight: bold;
+                text-align: center;
+                @media (max-width:922px) {
+                    font-size: map-get($font-size, medium);
+                }
+            }
+            &--desc {
+                display: block;
+                width: 80%;
+                margin: 20px 0;
+                font-size: map-get($font-size, small);
+                @media (max-width:922px) {
+                    font-size: map-get($font-size, small)*0.75;
+                }
+            }
+            &--price {
+                font-weight: bold;
+                font-size: map-get($font-size, medium);
+                @media (max-width:922px) {
+                    font-size: map-get($font-size, small);
+                }
+            }
+        }
+        &--footer {
+            @include flex ;
+            @media (max-width:922px){
+                flex-direction: column;
+            }
+            div{
+                height: 90px;
+                margin: 0 10px;
+            }
+            img{
+                width: 100%!important;
+            }
+            h2{
+                width: auto;
+                font-size: map-get($font-size, xl);
+                @media (max-width: 922px){
+                    font-size: map-get($font-size, large);
+                }
+            }
+        }
     }
 }
+
+.menu__details {
+    &--one,
+    &--two,
+    &--three,
+    &--four {
+        margin: auto;
+        @media (max-width: 922px) {
+            margin: 0 130px;
+        }
+        i {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        img {
+            width: 10%;
+        }
+    }
+    &--footers {
+        div {
+            height: 90px;
+            margin: 0 10px;
+        }
+        img {
+            width: 100%;
+        }
+        h2 {
+            width: auto;
+            font-size: map-get($font-size, xl);
+            @media (max-width: 922px){
+                font-size: map-get($font-size, large);
+            }
+        }
+    }
+}
+.dish {
+    max-width: 1185px;
+    padding: 80px 0 100px 0;
+}
+
+.lines_left, .lines_right{
+    min-width: 290px;
+    max-height: 6px;
+    @media (max-width:922px) {
+        min-width: 15%;
+    }
+}
+/* .menu__details h1 {
+    border-bottom: 0px solid black;
+    transform-origin: left;
+    transition: all 500ms ease-in-out;
+    &:hover{
+        border-bottom: 2px solid black;
+        transform: scaleX(1);
+    }
+} */

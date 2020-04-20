@@ -9,7 +9,7 @@ $colour-one: #FCDFDB;
 $colour-two: #FFF5FE;
 $colour-three: #F9F9F9;
 $colour-four: #FDFFFD;
-$colour-title-one: #353535;
+$colour-title-one: #3D1319;
 $colour-title-two: #C77412;
 $colour-title-three: #0887FB;
 $colour-title-four: #72BF56;
@@ -43,6 +43,44 @@ $card: (
         font-title: 'devonshire',    
         byline: 'flow',
         title-size: 45px,
+        byline-size: 75px,
+        bg: $colour-one,
+        txt: $colour-title-one,
+        gradient: $colour-title-one,
+        ),
+    two: (
+        font-title:'croissant-one',    
+        byline: 'playfair-display',
+        title-size: 35px,
+        byline-size: 60px,
+        bg: $colour-two,
+        txt: $colour-title-two,
+        gradient: #905BFD,
+    ),
+    three: (
+        font-title: 'dancing-script',    
+        byline: 'joelenehand',  
+        title-size: 50px,
+        byline-size: 67px,
+        bg: $colour-three,
+        txt: $colour-title-three,
+        gradient: lighten($colour-title-three, 25),
+    ),
+    four: (
+        font-title: 'kaushan-script',    
+        byline: 'joelenehand',   
+        title-size: 50px,
+        byline-size: 67px,
+        bg: $colour-four,
+        txt: $colour-title-four,
+        gradient: lighten(#BFFF7E, 10),
+    )
+);
+$card_back: (
+    one: (
+        font-title: 'devonshire',    
+        byline: 'flow',
+        title-size: 75px,
         byline-size: 75px,
         bg: $colour-one,
         txt: $colour-title-one,

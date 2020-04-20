@@ -37,6 +37,22 @@
     }
 }
 
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 @mixin font-face($map){
     @each $mod, $val in $map {
       @font-face {
@@ -67,6 +83,9 @@
         font-weight: lighter;
         width: 100%;
         text-align: center;
+        @media (max-width:922px) {
+            font-size: map-get($val, title-size)*0.65;
+        }
         }
       }
     }
