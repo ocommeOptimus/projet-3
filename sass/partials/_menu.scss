@@ -14,7 +14,7 @@
         }
     }
     &__details{
-        @include card-prev($card_back);
+        @include card-details($card_back);
         &--food {
             @include flex-space ;
             margin-top: 90px;
@@ -93,10 +93,10 @@
 }
 
 .menu__details {
-    &--one,
-    &--two,
-    &--three,
-    &--four {
+    &--1,
+    &--2,
+    &--3,
+    &--4 {
         margin: auto;
         @media (max-width: 922px) {
             margin: 0 130px;
@@ -137,6 +137,57 @@
     max-height: 6px;
     @media (max-width:922px) {
         min-width: 15%;
+    }
+}
+.custom-menu2 {
+    .lines_left, .lines_right{
+        min-width: 290px;
+        max-height: 6px;
+        @media (max-width:922px) {
+            min-width: 15%;
+        }
+    }
+    h3 {
+        font-size: 30px;
+    }
+}
+.custom-menu2bis {
+    color: #A56799;
+    .lines_left, .lines_right{
+        min-width: 290px;
+        max-height: 6px;
+        @media (max-width:922px) {
+            min-width: 15%;
+        }
+    }
+    h3 {
+        font-size: 30px;
+    }
+}
+.custom-menu2ter {
+    color: #6E4CCC;
+    .lines_left, .lines_right{
+        min-width: 290px;
+        max-height: 6px;
+        @media (max-width:922px) {
+            min-width: 15%;
+        }
+    }
+    h3 {
+        font-size: 30px;
+    }
+}
+.custom-menu3 {
+    color: black;
+    .lines_left, .lines_right{
+        min-width: 290px;
+        max-height: 6px;
+        @media (max-width:922px) {
+            min-width: 15%;
+        }
+    }
+    h3 {
+        font-size: 32px;
     }
 }
 /* .menu__details h1 {

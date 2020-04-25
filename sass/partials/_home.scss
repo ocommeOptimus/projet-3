@@ -1,26 +1,48 @@
 .menu {
+    padding: 0 310px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
+    @media (max-width: 1910px) {
+        padding: 0;
+    }
+    @for $i from 1 through $num-cards{
+        & .box#{$i} {
+            animation: menu $anim-dur backwards infinite ease-in-out alternate;
+            animation-delay: $anim-delay * $i;
+            transition: all 600ms;
+            &:hover {
+                animation: menu-hover $anim-dur both cubic-bezier(.54,.18,0,.96);
+            }
+            @media (max-width: 922px) {
+                width: 280px;
+                height: 400px;
+            }
+        }
+    }
     &__card {
         opacity: 1;
         overflow: hidden;
         width: 535px;
         height: 765px;
         margin: 50px;
-        background: rgba(0, 0,2);
-        box-shadow: 1px 1px 22px lighten(grey, 35);
-        transition: opacity 650ms ease-in-out, box-shadow 800ms ease-in-out;
         @include card-prev($card);
-        &:hover {
-            cursor: pointer;
-            opacity: 0.8;
-            box-shadow: 1px 1px 22px lighten(grey, 5);
-        }
-        @media (max-width: 922px) {
-            width: 280px;
-            height: 400px;
+        &--title{
+            transition: all 600ms;
+            &:hover {
+                transform: perspective(750px) translateZ(40px);
+                box-shadow: 1px 1px 22px lighten(grey, 1);
+            }
+            @media (max-width:922px) {
+                font-size: larger;
+                i {
+                    text-align: center;
+                }
+                img {
+                    width: 50%;
+                }
+            }
         }
     }
     &__soon {
@@ -33,6 +55,17 @@
         color: $colour-txt;
         font-size: map-get($font-size, xl);
         transition: all 550ms;
+        &--text{
+            span {
+                animation: dot 1000ms both infinite ease-in-out alternate;
+            }
+            span:nth-child(2) {
+                animation-delay: 200ms;
+            }
+            span:nth-child(3) {
+                animation-delay: 400ms;
+            }
+        }
         &:hover {
             cursor: pointer;
             color: $colour-white;
@@ -44,34 +77,12 @@
     }
 }
 
-.menu__card{
-    &--one,
-    &--two,
-    &--three,
-    &--four {
-        transition: all 1100ms ease-out;
-        &:hover {
-            transform: perspective(750px) translateZ(40px);
-        }
-        @media (max-width:922px) {
-            font-size: larger;
-            i {
-                text-align: center;
-            }
-            img {
-                width: 50%;
-            }
-        }
-    }
-}
-
 .gradient__title, .gradient__icon {
-    &--one, 
-    &--two, 
-    &--three, 
-    &--four {
-        display: inline-block;
-        position: relative;
+    @for $i from 1 through $num-cards{
+        &--#{$i} {
+            display: inline-block;
+            position: relative;
+        }
     }
 }
   
@@ -81,5 +92,40 @@
     }
     &__title{
         @include gradient($card);
+    }
+}
+
+@keyframes menu {
+    0%{
+        box-shadow: 1px 1px 22px lighten(grey, 35);
+    }
+    100%{
+        box-shadow: 1px 1px 22px lighten(grey, 5);
+    }
+}
+
+@keyframes menu-hover {
+    0%{
+        opacity: 0.9;
+        box-shadow: 1px 1px 22px lighten(grey, 35);
+    }
+    50%{
+        box-shadow: 1px 1px 22px lighten(grey, 5);;
+    }
+    100%{
+        opacity: 0.8;
+        box-shadow: 1px 1px 22px lighten(grey, 1);
+    }
+}
+
+@keyframes dot {
+    0% {
+        opacity: 0.2;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.2;
     }
 }
