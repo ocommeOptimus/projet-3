@@ -1,42 +1,3 @@
-@mixin heading-shadow($colour:lightness-shift($colour-primary), $offset: $heading-shadow-size){
-    text-shadow: $offset $offset $colour;
-}
-
-@mixin border($colour:$colour-primary) {
-    border: .1rem solid $colour;
-}
-
-@mixin img-ratio {
-    width: 100%;
-        display: block;
-        overflow: hidden;
-        padding-top: 56.25%;
-        position: relative;
-        & img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            transform: translate(-50%, -50%);
-        }
-}
-
-@mixin btn {
-    padding: $grid-gutter;
-    @include border;
-    color: $colour-primary;
-    background: $colour-secondary;
-    cursor: pointer;
-    &:hover{
-        background: $colour-primary;
-        color: $colour-accent;
-    }
-    &--full-width {
-        width: 100%;
-        margin: 0 auto;
-    }
-}
-
 @mixin flex {
     display: flex;
     justify-content: center;
@@ -60,6 +21,37 @@
         src: url('../fonts/#{$val}') format('truetype');
         font-weight: normal;
         font-style: normal;
+        }
+    }
+}
+
+@mixin box-anim($map){
+    @each $card-number, $val in $map {
+        @keyframes menu-#{$card-number} {
+            0%{
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
+            }
+            100%{
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 15);
+            }
+        }
+    }
+}
+
+@mixin box-anim-hover($map){
+    @each $card-number, $val in $map {
+        @keyframes menu-hover-#{$card-number} {
+            0%{
+                opacity: 0.9;
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
+            }
+            50%{
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 15);;
+            }
+            100%{
+                opacity: 0.8;
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 7);
+            }
         }
     }
 }

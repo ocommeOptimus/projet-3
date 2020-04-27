@@ -9,11 +9,10 @@
     }
     @for $i from 1 through $num-cards{
         & .box#{$i} {
-            animation: menu $anim-dur backwards infinite ease-in-out alternate;
+            animation: menu-#{$i} $anim-dur backwards infinite ease-in-out alternate;
             animation-delay: $anim-delay * $i;
-            transition: all 600ms;
             &:hover {
-                animation: menu-hover $anim-dur both cubic-bezier(.54,.18,0,.96);
+                animation: menu-hover-#{$i} $anim-dur both cubic-bezier(.54,.18,0,.96);
             }
             @media (max-width: 922px) {
                 width: 280px;
@@ -24,7 +23,7 @@
     &__card {
         opacity: 1;
         overflow: hidden;
-        width: 535px;
+        width: 40%;
         height: 765px;
         margin: 50px;
         @include card-prev($card);
@@ -32,7 +31,6 @@
             transition: all 600ms;
             &:hover {
                 transform: perspective(750px) translateZ(40px);
-                box-shadow: 1px 1px 22px lighten(grey, 1);
             }
             @media (max-width:922px) {
                 font-size: larger;
@@ -77,6 +75,7 @@
     }
 }
 
+
 .gradient__title, .gradient__icon {
     @for $i from 1 through $num-cards{
         &--#{$i} {
@@ -95,28 +94,9 @@
     }
 }
 
-@keyframes menu {
-    0%{
-        box-shadow: 1px 1px 22px lighten(grey, 35);
-    }
-    100%{
-        box-shadow: 1px 1px 22px lighten(grey, 5);
-    }
-}
 
-@keyframes menu-hover {
-    0%{
-        opacity: 0.9;
-        box-shadow: 1px 1px 22px lighten(grey, 35);
-    }
-    50%{
-        box-shadow: 1px 1px 22px lighten(grey, 5);;
-    }
-    100%{
-        opacity: 0.8;
-        box-shadow: 1px 1px 22px lighten(grey, 1);
-    }
-}
+@include box-anim($card);
+@include box-anim-hover($card);
 
 @keyframes dot {
     0% {

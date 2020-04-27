@@ -24,7 +24,9 @@
             display: inline;
             color: $colour-txt;
             font-size: map-get($font-size, large);
-            animation: footer $anim-dur infinite ease-in-out alternate;
+            &:hover{
+                animation: footer $anim-dur infinite ease-in-out alternate;
+            }
             @media (max-width:922px){
                 font-size: map-get($font-size, medium);
             }
@@ -41,7 +43,9 @@
             display: inline;
             color: $colour-txt;
             font-size: map-get($font-size, large);
-            animation: footer $anim-dur infinite ease-in-out alternate-reverse;
+            &:hover{
+                animation: footer $anim-dur infinite ease-in-out alternate-reverse;
+            }
             @media (max-width:922px){
                 font-size: map-get($font-size, medium);
             }
