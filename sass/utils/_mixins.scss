@@ -69,14 +69,26 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media (max-width:576px){
+          font-size: map-get($val, byline-size)*0.63;
+      }
       h2 {
         font-family: map-get($val, font-title);
         font-size: map-get($val, title-size);
         font-weight: lighter;
         width: 100%;
         text-align: center;
-        @media (max-width:922px) {
-            font-size: map-get($val, title-size)*0.65;
+        @media (max-width:1200px) {
+            font-size: map-get($val, title-size)*0.85;
+        }
+        @media (max-width:1070px) {
+            font-size: map-get($val, title-size)*0.7;
+        }
+        @media (max-width:992px) {
+            font-size: map-get($val, title-size)*0.9;
+        }
+        @media (max-width:576px) {
+            font-size: map-get($val, title-size)*0.63;
         }
         }
       }
@@ -97,14 +109,22 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media (max-width:1240px) {
+          font-size: map-get($val, byline-size)*0.85;
+      }
       h2 {
         font-family: map-get($val, font-title);
         font-size: map-get($val, title-size);
         font-weight: lighter;
-        width: 35%;
+        width: auto;
         text-align: center;
-        @media (max-width:922px) {
+        @media (max-width:1240px) {
+            font-size: map-get($val, title-size)*0.85;
+        }
+        @media (max-width:1170px) {
             font-size: map-get($val, title-size)*0.65;
+        }
+        @media (max-width:768px) {
         }
         }
       }
