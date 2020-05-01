@@ -52,6 +52,7 @@
                 font-size: map-get($font-size, large);
                 font-weight: bold;
                 text-align: center;
+                margin-bottom: 15px;
             }
             &--desc {
                 display: block;
@@ -62,6 +63,11 @@
                 @media (max-width: 1240px) {
                     font-size: map-get($font-size, small)*0.9;
                 }
+                @media (max-width:992px) {
+                    margin: 100px auto 0 auto;
+                    width: 100%;
+                    text-align: center;
+                }
             }
             &--price {
                 font-weight: bold;
@@ -70,10 +76,16 @@
                 @media (max-width:1240px) {
                     font-size: map-get($font-size, medium)*0.9;
                 }
+                @media (max-width:992px) {
+                    width: 100%;
+                    text-align: center;
+                    transform: translateY(-105px);
+                }
             }
         }
         &--footer {
             @include flex ;
+            margin-top: 25px;
             @media (max-width:992px){
                 flex-direction: column;
                 padding-top: 45px;
@@ -142,39 +154,23 @@
     }
     .menu__details--food--desc {
         padding-left: 0;
-        @media (max-width:992px) {
-            width: 100%;
-            margin: 20px auto;
-            text-align: center;
-            transform: translateY(55px);
-        }
         @media (max-width:768px) {
             font-size: map-get($font-size, small)*0.8;
             padding: 0 15%;
         }
         @media (max-width:576px) {
-            margin: 15px auto;
             font-size: map-get($font-size, small)*0.7;
-            transform: translateY(50px);
             padding: 0 6%;
         }
     }
     .menu__details--food--price {
         padding-right: 0;
-        @media(max-width:992px) {
-            width: 100%;
-            text-align: center;
-            transform: translateY(-45px);
-        }
-        @media(max-width:768px) {
-            transform: translateY(-65px);
-        }
     }
 }
 .custom-menu1:nth-child(5){
     .menu__details--food--desc {
         width: 100%;
-        transform: translateY(0);
+        margin: 50px auto 0 auto;
     }
 }
 .custom-menu2 {
@@ -201,20 +197,14 @@
         @media (max-width:992px) {
             padding-left: 0;
             font-size: map-get($font-size, small)*0.8;
-            width: 100%;
-            margin: 20px auto;
-            text-align: center;
-            transform: translateY(55px);
         }
         @media (max-width:768px) {
             padding: 0 15%;
             font-size: map-get($font-size, small)*0.75;
         }
         @media (max-width:576px) {
-            margin: 15px auto;
-            font-size: map-get($font-size, small)*0.6;
-            transform: translateY(50px);
-            padding: 0 6%;
+            font-size: map-get($font-size, small)*0.7;
+            padding: 0 10%;
         }
     }
     .menu__details--food--price {
@@ -222,13 +212,13 @@
             padding-right: 0;
             width: 100%;
             text-align: center;
-            transform: translateY(-45px);
+            transform: translateY(-105px);
         }
         @media (max-width:768px) {
-            transform: translateY(-65px);
             font-size: map-get($font-size, medium)*0.75;
         }
         @media (max-width: 576px) {
+            transform: translateY(-120px);
             font-size: map-get($font-size, medium)*0.7;
         }
     }
@@ -240,6 +230,7 @@
     color: #6E4CCC;
     .menu__details--food--desc {
         width: 100%;
+        margin: 50px auto 0 auto;
     }
 }
 .custom-menu3 {
@@ -270,18 +261,13 @@
         @media (max-width:992px) {
             padding-left: 0;
             font-size: map-get($font-size, small)*0.8;
-            width: 100%;
-            margin: 20px auto;
-            text-align: center;
-            transform: translateY(55px);
         }
         @media (max-width:768px) {
             padding: 0 15%;
         }
         @media (max-width:576px) {
-            margin: 15px auto;
+            margin: 75px auto 0 auto;
             font-size: map-get($font-size, small)*0.7;
-            transform: translateY(45px);
             padding: 0 6%;
         }
     }
@@ -291,12 +277,8 @@
         }
         @media (max-width:992px) {
             padding-right: 0;
-            width: 100%;
-            text-align: center;
-            transform: translateY(-45px);
         }
         @media (max-width:768px) {
-            transform: translateY(-55px);
             font-size: map-get($font-size, medium)*0.75;
         }
         @media (max-width: 576px) {
