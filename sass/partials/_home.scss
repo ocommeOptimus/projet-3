@@ -47,7 +47,9 @@
         }
         @include card-prev($card);
         &--title{
-            transition: all 600ms;
+            cursor: pointer;
+            transition-duration: 1200ms;
+            transition: perspective 100ms ease, translateZ() 500ms ease;
             &:hover {
                 transform: perspective(750px) translateZ(40px);
             }
