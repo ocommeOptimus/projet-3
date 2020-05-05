@@ -13,8 +13,7 @@
     @media (max-width:576px) {
         height: 195px;
     }
-    a {
-        text-align: center;
+    &__link {
         margin: auto;
     }   
     &__logo {

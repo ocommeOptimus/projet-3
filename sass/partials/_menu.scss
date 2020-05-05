@@ -4,7 +4,7 @@
     @media (max-width:1240px) {
         width: 90%;
     }
-    &__title {
+    &__big-title {
         width: 100%;
         text-align: center;
         color: black;
@@ -21,274 +21,266 @@
         }
     }
     &__details{
+        max-width: 1185px;
+        padding: 80px 0 100px 0;
         @include card-details($card_back);
-        &--food {
-            @include flex-space ;
-            margin-top: 90px;
-            padding: 0 45px;
-            h3 {
-                position: relative;
-                &::after {
-                    content: '';
-                    transform-origin: left; 
-                    transform: scaleX(0);
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    height: .1em; 
-                    background: $colour-txt;
-                    transition: transform .6s;
-                }
-                &:hover{
-                    &::after {
-                        transform: scaleX(1);
-                    }
-                }
+    }
+    &__big-icon {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        @include gradient($icon);
+    }
+    &__big-img {
+        width: 10%;
+        @media (max-width:992px) {
+            width: auto;
+        }
+    }
+    &__food {
+        @include flex-space ;
+        margin-top: 90px;
+        padding: 0 45px;
+        &--custom-menu1 {
+            padding: 0 125px;
+            @media (max-width:992px) {
+                padding: 0 42px;
             }
-            &--title {
-                @include flex-space;
-                flex-wrap: nowrap;
-                font-size: map-get($font-size, large);
-                font-weight: bold;
-                text-align: center;
-                margin-bottom: 15px;
+            .menu__lines {
+                width: 27%;
+                max-height: 6px;
             }
-            &--desc {
-                display: block;
-                width: 80%;
-                margin: 20px 0;
-                padding-left: 12.5%;
-                font-size: map-get($font-size, small);
-                @media (max-width: 1240px) {
-                    font-size: map-get($font-size, small)*0.9;
-                }
-                @media (max-width:992px) {
-                    margin: 100px auto 0 auto;
-                    width: 100%;
-                    text-align: center;
-                }
-            }
-            &--price {
-                font-weight: bold;
-                font-size: map-get($font-size, medium);
-                padding-right: 12.5%;
+            .menu__animate-title {
+                font-size: 45px;
                 @media (max-width:1240px) {
-                    font-size: map-get($font-size, medium)*0.9;
+                    font-size: 37px;
                 }
+                @media (max-width:576px) {
+                    font-size: 25px;
+                }
+            }
+            .menu__dish {
+                padding-left: 0;
+                @media (max-width:768px) {
+                    font-size: map-get($font-size, small)*0.8;
+                    padding: 0 15%;
+                }
+                @media (max-width:576px) {
+                    font-size: map-get($font-size, small)*0.7;
+                    padding: 0 6%;
+                }
+            }
+            .menu__price {
+                padding-right: 0;
+            }
+        }
+        &--custom-menu1:nth-child(5){
+            .menu__dish {
+                width: 100%;
+                margin: 50px auto 0 auto;
+            }
+        }
+        &--custom-menu2 {
+            @media (max-width:768px) {
+                padding: 0 10px;
+            }
+            .menu__lines {
+                width: 25%;
+                max-height: 17px;
+            }
+            .menu__animate-title {
+                font-size: 30px;
+                @media (max-width:1240px){
+                    font-size: 27px;
+                }
+                @media (max-width:768px) {
+                    font-size: 25px;
+                }
+                @media (max-width:576px) {
+                    font-size: 23px;
+                }
+            }
+            .menu__dish {
                 @media (max-width:992px) {
+                    padding-left: 0;
+                    font-size: map-get($font-size, small)*0.8;
+                }
+                @media (max-width:768px) {
+                    padding: 0 15%;
+                    font-size: map-get($font-size, small)*0.75;
+                }
+                @media (max-width:576px) {
+                    font-size: map-get($font-size, small)*0.7;
+                    padding: 0 10%;
+                }
+            }
+            .menu__price {
+                @media (max-width:992px) {
+                    padding-right: 0;
                     width: 100%;
                     text-align: center;
                     transform: translateY(-105px);
                 }
-            }
-        }
-        &--footer {
-            @include flex ;
-            margin-top: 25px;
-            @media (max-width:992px){
-                flex-direction: column;
-                padding-top: 45px;
-            }
-            div{
-                height: 90px;
-                margin: 0 10px;
-            }
-            img{
-                width: 100%!important;
-                @media (max-width:992px) {
-                    width: auto;
+                @media (max-width:768px) {
+                    font-size: map-get($font-size, medium)*0.75;
+                }
+                @media (max-width: 576px) {
+                    transform: translateY(-120px);
+                    font-size: map-get($font-size, medium)*0.7;
                 }
             }
-            h2{
-                width: auto;
-                font-size: map-get($font-size, xl);
-                @media (max-width: 992px){
-                    font-size: map-get($font-size, large);
+        }
+        &--custom-menu2:nth-child(3) {
+            color: #A56799;
+        }
+        &--custom-menu2:nth-child(4) {
+            color: #6E4CCC;
+            .menu__dish {
+                width: 100%;
+                margin: 50px auto 0 auto;
+            }
+        }
+        &--custom-menu3 {
+            color: black;
+            @media (max-width:768px) {
+                padding: 0 10px;
+            }
+            .menu__lines {
+                width: 25%;
+                max-height: 17px;
+            }
+            .menu__animate-title {
+                font-size: 32px;
+                @media (max-width:1240px){
+                    font-size: 27px;
+                }
+                @media (max-width:768px) {
+                    font-size: 25px;
+                }
+                @media (max-width:576px) {
+                    font-size: 23px;
+                }
+            }
+            .menu__dish {
+                @media (max-width:1200px) {
+                    padding-left: 6%;
+                }
+                @media (max-width:992px) {
+                    padding-left: 0;
+                    font-size: map-get($font-size, small)*0.8;
+                }
+                @media (max-width:768px) {
+                    padding: 0 15%;
+                }
+                @media (max-width:576px) {
+                    margin: 75px auto 0 auto;
+                    font-size: map-get($font-size, small)*0.7;
+                    padding: 0 6%;
+                }
+            }
+            .menu__price {
+                @media (max-width:1200px) {
+                    padding-right: 6%;
+                }
+                @media (max-width:992px) {
+                    padding-right: 0;
+                }
+                @media (max-width:768px) {
+                    font-size: map-get($font-size, medium)*0.75;
+                }
+                @media (max-width: 576px) {
+                    font-size: map-get($font-size, medium)*0.7;
                 }
             }
         }
     }
-}
-
-.menu__details {
-    &--1,
-    &--2,
-    &--3,
-    &--4 {
-        i {
+    &__title-parties {
+        @include flex-space;
+        flex-wrap: nowrap;
+        font-size: map-get($font-size, large);
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    &__animate-title {
+        position: relative;
+        &::after {
+            content: '';
+            transform-origin: left; 
+            transform: scaleX(0);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: .1em; 
+            background: $colour-txt;
+            transition: transform .6s;
+        }
+        &:hover{
+            &::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+    &__dish {
+        display: block;
+        width: 80%;
+        margin: 20px 0;
+        padding-left: 12.5%;
+        font-size: map-get($font-size, small);
+        @media (max-width: 1240px) {
+            font-size: map-get($font-size, small)*0.9;
+        }
+        @media (max-width:992px) {
+            margin: 100px auto 0 auto;
             width: 100%;
-            height: auto;
             text-align: center;
         }
-        img {
-            width: 10%;
-            @media (max-width:992px) {
-                width: auto;
-            }
-        }
     }
-}
-.dish {
-    max-width: 1185px;
-    padding: 80px 0 100px 0;
-}
-
-.custom-menu1{
-    padding: 0 125px;
-    @media (max-width:992px) {
-        padding: 0 42px;
-    }
-    h3 {
-        font-size: 45px;
+    &__price {
+        font-weight: bold;
+        font-size: map-get($font-size, medium);
+        padding-right: 12.5%;
         @media (max-width:1240px) {
-            font-size: 37px;
+            font-size: map-get($font-size, medium)*0.9;
         }
-        @media (max-width:576px) {
-            font-size: 25px;
-        }
-    }
-    .lines_left, .lines_right{
-        width: 27%;
-        max-height: 6px;
-    }
-    .menu__details--food--desc {
-        padding-left: 0;
-        @media (max-width:768px) {
-            font-size: map-get($font-size, small)*0.8;
-            padding: 0 15%;
-        }
-        @media (max-width:576px) {
-            font-size: map-get($font-size, small)*0.7;
-            padding: 0 6%;
-        }
-    }
-    .menu__details--food--price {
-        padding-right: 0;
-    }
-}
-.custom-menu1:nth-child(5){
-    .menu__details--food--desc {
-        width: 100%;
-        margin: 50px auto 0 auto;
-    }
-}
-.custom-menu2 {
-    @media (max-width:768px) {
-        padding: 0 10px;
-    }
-    .lines_left, .lines_right{
-        width: 25%;
-        max-height: 17px;
-    }
-    h3 {
-        font-size: 30px;
-        @media (max-width:1240px){
-            font-size: 27px;
-        }
-        @media (max-width:768px) {
-            font-size: 25px;
-        }
-        @media (max-width:576px) {
-            font-size: 23px;
-        }
-    }
-    .menu__details--food--desc {
         @media (max-width:992px) {
-            padding-left: 0;
-            font-size: map-get($font-size, small)*0.8;
-        }
-        @media (max-width:768px) {
-            padding: 0 15%;
-            font-size: map-get($font-size, small)*0.75;
-        }
-        @media (max-width:576px) {
-            font-size: map-get($font-size, small)*0.7;
-            padding: 0 10%;
-        }
-    }
-    .menu__details--food--price {
-        @media (max-width:992px) {
-            padding-right: 0;
             width: 100%;
             text-align: center;
             transform: translateY(-105px);
         }
-        @media (max-width:768px) {
-            font-size: map-get($font-size, medium)*0.75;
-        }
-        @media (max-width: 576px) {
-            transform: translateY(-120px);
-            font-size: map-get($font-size, medium)*0.7;
-        }
     }
-}
-.custom-menu2:nth-child(3) {
-    color: #A56799;
-}
-.custom-menu2:nth-child(4) {
-    color: #6E4CCC;
-    .menu__details--food--desc {
-        width: 100%;
-        margin: 50px auto 0 auto;
-    }
-}
-.custom-menu3 {
-    color: black;
-    @media (max-width:768px) {
-        padding: 0 10px;
-    }
-    .lines_left, .lines_right{
-        width: 25%;
-        max-height: 17px;
-    }
-    h3 {
-        font-size: 32px;
-        @media (max-width:1240px){
-            font-size: 27px;
+    &__footer {
+        @include flex ;
+        margin-top: 25px;
+        @media (max-width:992px){
+            flex-direction: column;
+            padding-top: 45px;
         }
-        @media (max-width:768px) {
-            font-size: 25px;
+        .menu__icon {
+            height: 90px;
+            margin: 0 10px;
         }
-        @media (max-width:576px) {
-            font-size: 23px;
+        .menu__img {
+            width: 100%!important;
+            @media (max-width:992px) {
+                width: auto;
+            }
         }
-    }
-    .menu__details--food--desc {
-        @media (max-width:1200px) {
-            padding-left: 6%;
-        }
-        @media (max-width:992px) {
-            padding-left: 0;
-            font-size: map-get($font-size, small)*0.8;
-        }
-        @media (max-width:768px) {
-            padding: 0 15%;
-        }
-        @media (max-width:576px) {
-            margin: 75px auto 0 auto;
-            font-size: map-get($font-size, small)*0.7;
-            padding: 0 6%;
-        }
-    }
-    .menu__details--food--price {
-        @media (max-width:1200px) {
-            padding-right: 6%;
-        }
-        @media (max-width:992px) {
-            padding-right: 0;
-        }
-        @media (max-width:768px) {
-            font-size: map-get($font-size, medium)*0.75;
-        }
-        @media (max-width: 576px) {
-            font-size: map-get($font-size, medium)*0.7;
+        .menu__title {
+            width: auto;
+            font-size: map-get($font-size, xl);
+            @media (max-width: 992px){
+                font-size: map-get($font-size, large);
+            }
         }
     }
 }
 
-.menu__details--4{
-    h2{
+.menu__details--style-4{
+    .menu__title {
         width: 40%;
     }
 }

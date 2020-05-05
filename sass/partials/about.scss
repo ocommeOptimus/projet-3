@@ -1,7 +1,7 @@
 .about {
     width: 60%;
     margin: auto;
-    h3 {
+    &__title {
         margin: 20px 0;
     }
     @media (max-width:992px) {

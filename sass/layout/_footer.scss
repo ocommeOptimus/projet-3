@@ -30,54 +30,46 @@
                 padding: 5px 15px;
             }
         }
-        &--link-left{
-            display: inline;
-            color: $colour-txt;
-            font-size: map-get($font-size, large);
-            &:hover{
-                animation: footer $anim-dur infinite ease-in-out alternate;
-            }
-            @media (max-width:992px){
-                font-size: map-get($font-size, medium);
-            }
-            @media (max-width:576px){
-                font-size: map-get($font-size, small);
-            }
-            & a{
-                text-decoration: none;
-                color: $colour-txt;
-                transition: all 250ms;
-            }
-            & a:hover{
-                color: $colour-white;
-            }
+    }
+    &__link-left {
+        display: inline;
+        color: $colour-txt;
+        font-size: map-get($font-size, large);
+        &:hover{
+            animation: footer-shake $anim-dur infinite ease-in-out alternate;
         }
-        &--link-right{
-            display: inline;
-            color: $colour-txt;
-            font-size: map-get($font-size, large);
-            &:hover{
-                animation: footer $anim-dur infinite ease-in-out alternate-reverse;
-            }
-            @media (max-width:992px){
-                font-size: map-get($font-size, medium);
-            }
-            @media (max-width:576px){
-                font-size: map-get($font-size, small);
-            }
-            & a{
-                text-decoration: none;
-                color: $colour-txt;
-                transition: all 250ms;
-            }
-            & a:hover{
-                color: $colour-white;
-            }
+        @media (max-width:992px){
+            font-size: map-get($font-size, medium);
+        }
+        @media (max-width:576px){
+            font-size: map-get($font-size, small);
+        }
+    }
+    &__link-right {
+        display: inline;
+        color: $colour-txt;
+        font-size: map-get($font-size, large);
+        &:hover{
+            animation: footer-shake $anim-dur infinite ease-in-out alternate-reverse;
+        }
+        @media (max-width:992px){
+            font-size: map-get($font-size, medium);
+        }
+        @media (max-width:576px){
+            font-size: map-get($font-size, small);
+        }
+    }
+    &__link-text {
+        text-decoration: none;
+        color: $colour-txt;
+        transition: all 250ms;
+        &:hover {
+            color: $colour-white;
         }
     }
 }
 
-@keyframes footer {
+@keyframes footer-shake {
     25% {
         // entièrement à droite
         transform: translateX($shake-intensity);
