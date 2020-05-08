@@ -149,3 +149,40 @@
         }
     }
 }
+
+@mixin underline($map) {
+    @each $card-number, $val in $map {
+        &--style-#{$card-number} {
+            &::after {
+                content: '';
+                transform-origin: left; 
+                transform: scaleX(0);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: .1em; 
+                background: map-get($val, txt);
+                transition: transform .6s;
+            }
+        }
+    }
+}
+@mixin underline-custom($map) {
+    @each $custom-number, $val in $map {
+        &--underline-#{$custom-number} {
+            &::after {
+                content: '';
+                transform-origin: left; 
+                transform: scaleX(0);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: .1em; 
+                background: map-get($val, underline);
+                transition: transform .6s;
+            }
+        }
+    }
+}

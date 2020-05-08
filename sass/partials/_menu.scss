@@ -206,18 +206,8 @@
     }
     &__animate-title {
         position: relative;
-        &::after {
-            content: '';
-            transform-origin: left; 
-            transform: scaleX(0);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: .1em; 
-            background: $colour-txt;
-            transition: transform .6s;
-        }
+        @include underline($card);
+        @include underline-custom($underline-custom);
         &:hover{
             &::after {
                 transform: scaleX(1);

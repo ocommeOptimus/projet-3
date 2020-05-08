@@ -120,3 +120,14 @@ $card_back: (
         gradient: lighten(#BFFF7E, 10),
     )
 );
+$underline-custom: (
+    1: (
+        underline: $colour-title-two,
+        ),
+    2: (
+        underline: #A56799,
+    ),
+    3: (
+        underline: #6E4CCC,
+    )
+);
