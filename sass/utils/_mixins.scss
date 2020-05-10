@@ -24,19 +24,10 @@
         }
     }
 }
-
-@mixin box-anim($map){
+@mixin box-shadow($map){
     @each $card-number, $val in $map {
-        @keyframes menu-#{$card-number} {
-            0%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
-            }
-            50%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 20);
-            }
-            100%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
-            }
+        &--shadow-#{$card-number} {
+            box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
         }
     }
 }
@@ -46,20 +37,10 @@
         @keyframes menu-hover-#{$card-number} {
             0%{
                 opacity: 0.9;
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
-            }
-            25%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 20);
-            }
-            50%{
-                box-shadow: 1px 1px 26px lighten(map-get($val, txt), 15);
-            }
-            75%{
-                box-shadow: 1px 1px 26px lighten(map-get($val, txt), 5);
             }
             100%{
                 opacity: 0.8;
-                box-shadow: 1px 1px 28px darken(map-get($val, txt), 8);
+                box-shadow: 1px 1px 28px darken(map-get($val, txt), 3);
             }
         }
     }

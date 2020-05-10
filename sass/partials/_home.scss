@@ -16,6 +16,7 @@
         width: 35%;
         height: 765px;
         margin: 50px;
+        @include box-shadow($card);
         @media (max-width:1920px) {
             width: 38.5%;
             height: 735px;
@@ -38,7 +39,6 @@
         }
         @for $i from 1 through $num-cards{
             &--shadow-#{$i} {
-                animation: menu-#{$i} $anim-dur both ease-in-out alternate;
                 &:hover {
                     animation: menu-hover-#{$i} $anim-dur both cubic-bezier(.54,.18,0,.96);
                 }
@@ -114,7 +114,6 @@
     }
 }
 
-@include box-anim($card);
 @include box-anim-hover($card);
 
 @keyframes dot {
