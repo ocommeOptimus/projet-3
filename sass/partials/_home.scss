@@ -38,8 +38,7 @@
         }
         @for $i from 1 through $num-cards{
             &--shadow-#{$i} {
-                animation: menu-#{$i} $anim-dur backwards infinite ease-in-out alternate;
-                animation-delay: $anim-delay * $i;
+                animation: menu-#{$i} $anim-dur both ease-in-out alternate;
                 &:hover {
                     animation: menu-hover-#{$i} $anim-dur both cubic-bezier(.54,.18,0,.96);
                 }
