@@ -31,8 +31,11 @@
             0%{
                 box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
             }
+            50%{
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 20);
+            }
             100%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 15);
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
             }
         }
     }
@@ -45,20 +48,26 @@
                 opacity: 0.9;
                 box-shadow: 1px 1px 22px lighten(map-get($val, txt), 35);
             }
+            25%{
+                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 20);
+            }
             50%{
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 15);;
+                box-shadow: 1px 1px 26px lighten(map-get($val, txt), 15);
+            }
+            75%{
+                box-shadow: 1px 1px 26px lighten(map-get($val, txt), 5);
             }
             100%{
                 opacity: 0.8;
-                box-shadow: 1px 1px 22px lighten(map-get($val, txt), 7);
+                box-shadow: 1px 1px 28px darken(map-get($val, txt), 8);
             }
         }
     }
 }
 
-@mixin card-prev($map) {
+@mixin card-preview($map) {
     @each $card-number, $val in $map{
-      & .card#{$card-number}{
+      &--style-#{$card-number}{
       font-family: map-get($val, byline);
       font-size: map-get($val, byline-size);
       color: map-get($val, txt);
@@ -72,7 +81,7 @@
       @media (max-width:576px){
           font-size: map-get($val, byline-size)*0.63;
       }
-      h2 {
+      .menu__title {
         font-family: map-get($val, font-title);
         font-size: map-get($val, title-size);
         font-weight: lighter;
@@ -97,7 +106,7 @@
 
 @mixin card-details($map) {
     @each $card-number, $val in $map{
-      &--#{$card-number}{
+      &--style-#{$card-number}{
       font-family: map-get($val, byline);
       font-size: map-get($val, byline-size);
       color: map-get($val, txt);
@@ -112,7 +121,7 @@
       @media (max-width:1240px) {
           font-size: map-get($val, byline-size)*0.85;
       }
-      h2 {
+      .menu__title {
         font-family: map-get($val, font-title);
         font-size: map-get($val, title-size);
         font-weight: lighter;
@@ -133,7 +142,7 @@
 
 @mixin gradient($map) {
     @each $card-number, $val in $map {
-        &--#{$card-number} {
+        &--gradient-#{$card-number} {
             &::before{
                 position: absolute;
                 top: 0;
@@ -145,6 +154,43 @@
                 content: '';
                 display: block;
                 mix-blend-mode: lighten;
+            }
+        }
+    }
+}
+
+@mixin underline($map) {
+    @each $card-number, $val in $map {
+        &--style-#{$card-number} {
+            &::after {
+                content: '';
+                transform-origin: left; 
+                transform: scaleX(0);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: .1em; 
+                background: map-get($val, txt);
+                transition: transform .6s;
+            }
+        }
+    }
+}
+@mixin underline-custom($map) {
+    @each $custom-number, $val in $map {
+        &--underline-#{$custom-number} {
+            &::after {
+                content: '';
+                transform-origin: left; 
+                transform: scaleX(0);
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: .1em; 
+                background: map-get($val, underline);
+                transition: transform .6s;
             }
         }
     }

@@ -13,16 +13,14 @@
     @media (max-width:576px) {
         height: 195px;
     }
-    a {
-        text-align: center;
+    &__link {
         margin: auto;
     }   
     &__logo {
         width: auto;
         height: 100px;
         @media (max-width:922px) {
-            width: 50%;
-            height: auto;
+            height: 65px;
         }
     }
 }

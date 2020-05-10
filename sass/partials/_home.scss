@@ -10,15 +10,6 @@
     @media (max-width:1240px) {
         padding: 0;
     }
-    @for $i from 1 through $num-cards{
-        & .box#{$i} {
-            animation: menu-#{$i} $anim-dur backwards infinite ease-in-out alternate;
-            animation-delay: $anim-delay * $i;
-            &:hover {
-                animation: menu-hover-#{$i} $anim-dur both cubic-bezier(.54,.18,0,.96);
-            }
-        }
-    }
     &__card {
         opacity: 1;
         overflow: hidden;
@@ -45,83 +36,83 @@
             width: 100%;
             height: 510px;
         }
-        @include card-prev($card);
-        &--title{
-            cursor: pointer;
-            transition-duration: 1200ms;
-            transition: perspective 100ms ease, translateZ() 500ms ease;
-            &:hover {
-                transform: perspective(750px) translateZ(40px);
-            }
-            @media (max-width:576px) {
-                font-size: larger;
-                i {
-                    text-align: center;
-                }
-                img {
-                    width: 50%;
+        @for $i from 1 through $num-cards{
+            &--shadow-#{$i} {
+                animation: menu-#{$i} $anim-dur both ease-in-out alternate;
+                &:hover {
+                    animation: menu-hover-#{$i} $anim-dur both cubic-bezier(.54,.18,0,.96);
                 }
             }
         }
     }
-    &__soon {
-        max-width: 655px;
-        margin: 45px auto;
-        padding: 1rem;
-        background-color: $colour-primary;
-        text-align: center;
-        border-radius: 25px;
-        color: $colour-txt;
-        font-size: map-get($font-size, xl);
-        transition: all 550ms;
-        &--text{
-            span {
-                animation: dot 1000ms both infinite ease-in-out alternate;
-            }
-            span:nth-child(2) {
-                animation-delay: 200ms;
-            }
-            span:nth-child(3) {
-                animation-delay: 400ms;
-            }
-        }
+    &__link {
+        cursor: pointer;
+        transition-duration: 1200ms;
+        transition: perspective 100ms ease, translateZ() 500ms ease;
         &:hover {
-            cursor: pointer;
-            color: $colour-white;
+            transform: perspective(750px) translateZ(40px);
         }
-        @media (max-width: 1920px) {
-            font-size: map-get($font-size, large);
-        }
-        @media (max-width:992px) {
-            max-width: 70%;
-            font-size: map-get($font-size, medium);
-        }
+        @include card-preview($card);
         @media (max-width:576px) {
-            max-width: 90%;
-            font-size: map-get($font-size, small);
+            font-size: larger;
         }
     }
-}
-
-
-.gradient__title, .gradient__icon {
-    @for $i from 1 through $num-cards{
-        &--#{$i} {
-            display: inline-block;
-            position: relative;
-        }
-    }
-}
-  
-.gradient {
-    &__icon{
+    &__icon {
+        display: inline-block;
+        position: relative;
         @include gradient($icon);
+        @media (max-width:576px) {
+            text-align: center;
+        }
     }
-    &__title{
+    &__img {
+        @media (max-width:576px) {
+            width: 50%;
+        }
+    }
+    &__title {
+        display: inline-block;
+        position: relative;
         @include gradient($card);
     }
 }
-
+.menu-soon {
+    max-width: 655px;
+    margin: 45px auto;
+    padding: 1rem;
+    background-color: $colour-primary;
+    text-align: center;
+    border-radius: 25px;
+    color: $colour-txt;
+    font-size: map-get($font-size, xl);
+    transition: all 550ms;
+    &__text{
+        span {
+            animation: dot 1000ms both infinite ease-in-out alternate;
+        }
+        span:nth-child(2) {
+            animation-delay: 200ms;
+        }
+        span:nth-child(3) {
+            animation-delay: 400ms;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        color: $colour-white;
+    }
+    @media (max-width: 1920px) {
+        font-size: map-get($font-size, large);
+    }
+    @media (max-width:992px) {
+        max-width: 70%;
+        font-size: map-get($font-size, medium);
+    }
+    @media (max-width:576px) {
+        max-width: 90%;
+        font-size: map-get($font-size, small);
+    }
+}
 
 @include box-anim($card);
 @include box-anim-hover($card);
